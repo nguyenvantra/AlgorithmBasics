@@ -72,5 +72,13 @@ public class AlgorithmBasics {
 		}
 		return number1;
 	}
+	
+	/**
+	 * Bội chung nhỏ nhất
+	 */
+	public int LCM(int number1, int number2) {
+		if(number1 == 0 || number2 == 0) return -1;
+		return (Math.abs(number1 * number2) / GCD(number1, number2) );
+	}
 
 }
