@@ -55,5 +55,22 @@ public class AlgorithmBasics {
 
 		return result;
 	}
+	
+	/**
+	 * Trong toán học, nếu số nguyên a chia hết cho số nguyên b thì số b được gọi là ước của số nguyên a, a được gọi là bội của b
+	 */
+	public int GCD(int number1, int number2) {
+		number1 = Math.abs(number1);
+		number2 = Math.abs(number2);
+		
+		if(number1==0 || number2 ==0) return number1 + number2;
+		while(number1 != number2) {
+			if(number1 > number2)
+				number1 = number1 - number2;
+			else 
+				number2 = number2 - number1;
+		}
+		return number1;
+	}
 
 }
