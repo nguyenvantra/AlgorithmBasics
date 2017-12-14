@@ -7,6 +7,7 @@ package com.darkness.algorithmbasics;
  * @since 1.0.0
  */
 public class AlgorithmBasics {
+	
 	/**
 	 * Tìm số chính phương. Số chính phương hay còn gọi là số hình vuông là số tự nhiên có căn bậc 2 là một số tự nhiên
 	 * 
@@ -19,11 +20,25 @@ public class AlgorithmBasics {
 	 * Số chính phương chia hết cho số nguyên tố p thì chia hết cho p^2.
 	 * Tất cả các số chính phương có thể viết thành dãy tổng của các số lẻ tăng dần từ 1: 1, 1 + 3, 1 + 3 + 5, 1 + 3 + 5 +7, 1 + 3 + 5 +7 +9 v.v...
 	 */
-	public boolean IsSquareNumber(int number) {
+	public boolean isSquareNumber(int number) {
 		int tmp = 0;
-		while (tmp * tmp < number) ++tmp;
-		return (tmp*tmp == number);
+		while (tmp * tmp < number)
+			++tmp;
+		return (tmp * tmp == number);
 	}
-	
-	
+
+	/**
+	 * Số nguyên tố là số tự nhiên chỉ có hai ước số dương phân biệt là 1 và chính nó
+	 * 
+	 */
+	public boolean isPrimeNumber(int number) {
+		if (number < 2)
+			return false;
+		for (int i = 0; i <= Math.sqrt((float) number); i++) {
+			if (number % i == 0)
+				return false;
+		}
+		return true;
+	}
+
 }
