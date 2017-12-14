@@ -1,5 +1,8 @@
 package com.darkness.algorithmbasics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author tranguyenvan
  * @email dkdarknessnvt@gmail.com
@@ -7,7 +10,6 @@ package com.darkness.algorithmbasics;
  * @since 1.0.0
  */
 public class AlgorithmBasics {
-	
 	/**
 	 * Tìm số chính phương. Số chính phương hay còn gọi là số hình vuông là số tự nhiên có căn bậc 2 là một số tự nhiên
 	 * 
@@ -28,17 +30,30 @@ public class AlgorithmBasics {
 	}
 
 	/**
-	 * Số nguyên tố là số tự nhiên chỉ có hai ước số dương phân biệt là 1 và chính nó
-	 * 
+	 * Số nguyên tố là số tự nhiên chỉ có hai ước số dương phân biệt là 1 và chính
+	 * nó
 	 */
 	public boolean isPrimeNumber(int number) {
 		if (number < 2)
 			return false;
-		for (int i = 0; i <= Math.sqrt((float) number); i++) {
+		for (int i = 2; i <= Math.sqrt((float) number); i++) {
 			if (number % i == 0)
 				return false;
 		}
 		return true;
+	}
+
+	/**
+	 * Liệt kê danh sách số nguyên tố < n cho trước
+	 */
+	public List<Integer> getListPrimeNumber(int number) {
+		List<Integer> result = new ArrayList<>();
+		for (int i = 0; i < number; i++) {
+			if (isPrimeNumber(i))
+				result.add(i);
+		}
+
+		return result;
 	}
 
 }
