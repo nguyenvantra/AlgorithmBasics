@@ -86,9 +86,19 @@ public class AlgorithmBasics {
 	 */
 	public int factorial(int number) {
 		int tmp = 1;
-		for(int i=1; i <= number; i++)
+		for(int i = 1; i <= number; i++)
 			tmp *= i;
 		return tmp;
+	}
+	
+	/**
+	 * Thuật toán tính tổ hợp chập k của n: C(k,n)
+	 */
+	public int combination(int k, int n) {
+		int result = 1;
+		for(int i = 1; i <= k; i++,n-- )
+			result = result * n /i;
+		return result;
 	}
 
 }
