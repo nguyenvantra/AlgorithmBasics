@@ -80,5 +80,15 @@ public class AlgorithmBasics {
 		if(number1 == 0 || number2 == 0) return -1;
 		return (Math.abs(number1 * number2) / GCD(number1, number2) );
 	}
+	
+	/**
+	 * Thuật toán tính giai thừa
+	 */
+	public int factorial(int number) {
+		int tmp = 1;
+		for(int i=1; i <= number; i++)
+			tmp *= i;
+		return tmp;
+	}
 
 }
